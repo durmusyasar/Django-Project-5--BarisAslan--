@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Django Dersleri{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    {% include 'messages.html' %}
+
+    {% include "header.html" %}
+
+    {% block body %}
+
+    {% endblock %}
+
+
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/style.js" %}"></script>
+
+</body>
+</html>

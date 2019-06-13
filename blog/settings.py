@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+# -*- coding: utf-8 -*-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post',
     'home',
+    'crispy_forms',
+    'django_cleanup',
+    'ckeditor',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +124,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CKEDITOR_BASEPATH = os.path.join(STATIC_URL, "js/jquery.js ")
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 300,
+    },
+}
+RECAPTCHA_PUBLIC_KEY = '6LfBxKgUAAAAAEJbw7bCXwP9G497ZcX3lHdmoNI4'
+RECAPTCHA_PRIVATE_KEY = '6LfBxKgUAAAAAFzznLWxgbrfM0F2PFOX_CkzLSK1'
+NOCAPTCHA = True
