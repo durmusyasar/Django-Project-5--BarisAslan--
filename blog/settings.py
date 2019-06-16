@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post',
     'home',
+    'accounts',
     'crispy_forms',
     'django_cleanup',
     'ckeditor',

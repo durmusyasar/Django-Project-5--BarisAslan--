@@ -50,8 +50,8 @@ def post_create(request):
     if not request.user.is_authenticated():
         return Http404()
     form = PostForm(request.POST or None, request.FILES or None)
-    if form.is_valslug():
-            post = form.save(commit=Fasle)
+    if form.is_valid():
+            post = form.save(commit=False)
             post.user=request.user
             post.save()
             messages.success(request, 'Başarılı bir şekilde oluşturuldu.')

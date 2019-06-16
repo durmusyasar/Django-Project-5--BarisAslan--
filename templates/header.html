@@ -39,10 +39,10 @@
                 <li><a href="#">İletişim</a></li>
 
                 {% if not request.user.is_authenticated %}
-                    <li><a href="#">Üye Ol</a></li>
-                    <li><a href="#">Giriş</a></li>
+                    <li><a href="{% url 'accounts:register' %}">Üye Ol</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Giriş</a></li>
                 {% else %}
-                    <li><a href="#">Çıkış</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Çıkış</a></li>
                 {% endif %}
             </ul>
 
